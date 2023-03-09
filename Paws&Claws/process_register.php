@@ -59,25 +59,39 @@ function sanitizeInput($data) {
     return $data;
 }
 
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
 //write member data to database
 function saveMemberToDB() {
     global $fname, $lname, $email, $hashedpw, $errorMsg, $success;
     
+    $memberType = "admin";
+    $emailNotif = 1;
+    $number = 11111;
+    
     //create database connection
-    $config = parse_ini_file('../../private/db-config.ini');
+    $config = parse_ini_file('../private/db-config.ini');
+//    var_dump($config);
     $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+
     
     //check connection
     if ($conn -> connect_error) {
-        $errorMsg = "Connection failed: " . $conn -> connect_error;
+        echo $errorMsg = "Connection failed: " . $conn -> connect_error;
         $success = false;
-    }
+    } 
     else {
         //prepare the statement, protect against sql injection
-        $stmt = $conn->prepare("INSERT INTO WorldOfPets_Members (fname, lname, email, password) "
-                . "VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO pnp_members (firstName, lastName, email, password, memberType, emailNotification) "
+                . "VALUES (?, ?, ?, ?, ?, ?)");
         //bind and execute the statement
-        $stmt->bind_param("ssss", $fname, $lname, $email, $hashedpw);
+        $stmt->bind_param("sssssi", $fname, $lname, $email, $hashedpw, $memberType, $emailNotif);
         if (!$stmt -> execute()) {
             $errorMsg = "Execute failed: (" . $stmt - errno. ")" . $stmt -> error;
             $success = false;

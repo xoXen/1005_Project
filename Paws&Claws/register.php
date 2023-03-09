@@ -56,10 +56,14 @@
                     <label for="pwd_confirm">Confirm Password:</label>
                     <input class="form-control" type="password" id="pwd_confirm" name="pwd_confirm" placeholder="Confirm password" required>
                 </div>
+                <div class="form-group">
+                    <label for="number">Phone Number:</label>
+                    <input class="form-control" type="number" id="number" name="number" placeholder="Enter phone number">
+                </div>
                <div class="form-check">
                     <label>
-                        <input type="checkbox" name="agree">
-                        Agree to terms and conditions.
+                        <input type="checkbox" name="emailNotif">
+                        Receive news & updates through Email.
                     </label>
                 </div>
                 <div class="form-group">
