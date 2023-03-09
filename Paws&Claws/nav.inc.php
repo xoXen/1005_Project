@@ -10,9 +10,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">Home</a>
             </li>
-            <div class="servicesmenu">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="servicesmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-            </div>
+
             <li class="nav-item">
                 <a class="nav-link" href="index.php#dogs">Dogs</a>
             </li>
