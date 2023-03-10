@@ -27,33 +27,35 @@
                 <a class="nav-link" href="index.php#cats">Cats</a>
             </li>
         </ul>
-                        <div class="dropdown" style="padding-right: 100px;">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dummy Sign in
-                    </button>
-                    <div class="dropdown-menu" style="padding:0px; margin:0; position:absolute; left:0;">
-                        <form class="px-4 py-3">
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                    Remember me
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">New around here? Sign up</a>
-                        <a class="dropdown-item" href="#">Forgot password?</a>
+        <div class="dropdown" style="padding-right: 100px;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="loginBtn" aria-haspopup="true" aria-expanded="false">
+                Login
+            </button>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dummy Sign in
+            </button>
+            <div class="dropdown-menu" style="padding:0px; margin:0; position:absolute; left:0;">
+                <form class="px-4 py-3">
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
                     </div>
-
-                </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                        <label class="form-check-label" for="dropdownCheck">
+                            Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">New around here? Sign up</a>
+                <a class="dropdown-item" href="#">Forgot password?</a>
+            </div>
+        </div>
     </div>
 </nav>
