@@ -14,7 +14,7 @@
 }
 
 /* Modal Content */
-.modal-login {
+.modal-login, .modal-reg {
   display:flex;
   background-color: #fefefe;
   margin: auto;
@@ -38,14 +38,23 @@
 }
 #row{
     margin: auto;
+    
 }
-#loginModalLeft {
+#loginModalLeft, #regModalLeft {
     padding: 3rem;
 }
 
-#loginModalRight {
+#loginModalRight, #regModalRight {
     margin: 0px;
     padding: 0px;
     background-image: url('../Images/cutepoccupinidkhowspelllol.jpg');
     background-size: 100%;
+/*    background-size:cover;*/
+/*    background-repeat: no-repeat;*/
+}
+
+.buttonsContainer {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,61 +1,35 @@
+var logModal = document.getElementById("loginModal");
+var regModal = document.getElementById("regModal");
+
 $(document).ready( function() {
-    
-    // Get the modal
-var modal = document.getElementById("loginModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("loginBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-    
+    // When the user clicks anywhere outside of the modal, close it
+//    windowClose();
 });
 
-function getElements() {
-    
-        // Get the modal
-    var modal = document.getElementById("loginModal");
-    
-    // Get the button that opens the modal
-    var loginBtn = document.getElementById("loginBtn");
+function windowClose() {
     //assign event listen on img popups
-    loginBtn.addEventListener('click', blockModal(modal)); 
-   
-    
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    span.addEventListener('click',unblockModal(modal));
-    
-    window.onclick = function (e) {
-        if (e.target === modal) {
-            unblockModal(modal);
-        }
-    }
-}
+    document.body.addEventListener('click', closeBtn, true); 
+};
 
-function blockModal(e) {
-    alert("test");
+function openRegBtn () {
+   setBlock(regModal);
+   setNone(logModal);
+};
+
+function openBtn () {
+    setBlock(logModal);
+    setNone(regModal);
+};
+
+function closeBtn () {
+    logModal.style.display = "none";
+    regModal.style.display = "none";
+};
+
+function setBlock (e) {
     e.style.display = "block";
-}
+};
 
-function unblockModal(e) {
-    alert("test2");
+function setNone (e) {
     e.style.display = "none";
-}
+};

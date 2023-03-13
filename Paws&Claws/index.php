@@ -43,39 +43,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <h2>Home of Singapore's Pet Lovers</h2>
         </header>
         <main class="container">
-            <section id="loginContainer" class="container">
-                <div id="loginModal" class="modal">
-                    <div class="modal-login">
-                        <div class="container">
-                            <div class="row">
-                                <div id="loginModalLeft" class="col-sm">
-                                    <h1>Member Login</h1>
-                                    <p>
-                                        Existing members log in here. For new members, please go to the
-                                        <a href="register.php">Sign Up page</a>.
-                                    </p>
-                                    <form action="process_login.php" method="post">
-                                        <div class="form-group">
-                                            <label for="email">Email:</label>
-                                            <input class="form-control" type="email" id="email" name="email" placeholder="Enter email" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="pwd">Password:</label>
-                                            <input class="form-control" type="password" id="pwd" name="pwd" placeholder="Enter password" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <button class="btn btn-outline-primary" type="submit">Submit</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div id="loginModalRight" class="col-sm">
-                                    <span class="close">&times;</span>
-                                </div>
-                            </div>                        
-                        </div>                        
-                    </div>
-                </div>
-            </section>
+            <?php include "login.inc.php" ?>
+            <?php include "reg.inc.php" ?>
             <section id="dogs">
                 <h2>All About Dogs!</h2>
                 <div class="row">

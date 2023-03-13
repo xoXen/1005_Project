@@ -28,7 +28,7 @@
             </li>
         </ul>
         <div class="dropdown" style="padding-right: 100px;">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="loginBtn" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-secondary" onClick="openBtn()" type="button">
                 Login
             </button>
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
