@@ -50,8 +50,13 @@ if (isset ($_SESSION['username'])) {
         <!-- expand-[size] -->
         <!--jumbotron is a big box used to call for extra attention-->
         <header class="jumbotron text-center">
-            <h1 class="display-4">Welcome to World of Pets!</h1>
-            <h2>Home of Singapore's Pet Lovers</h2>
+            <?php if (isset ($_SESSION['username'])) { ?>
+                <h1 class="display-4">Hello <?php $username ?>! :)</h1>
+                <h2>This is the Paws and Claws home page hehehehe</h2>
+            <?php } else { ?>
+                <h1 class="display-4">Welcome to World of Pets!</h1>
+                <h2>Home of Singapore's Pet Lovers</h2>
+            <?php } ?>
         </header>
         <main class="container">
             <?php include "login.inc.php" ?>
