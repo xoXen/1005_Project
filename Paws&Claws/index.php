@@ -3,7 +3,18 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<!--test-->
+<!--t
+est-->
+<?php
+session_start();
+
+if (isset ($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    $memberID = $_SESSION['mid'];
+}
+
+?>
+
 <html>
     <head>
         <title>Paws & Claws!</title>

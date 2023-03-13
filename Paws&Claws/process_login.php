@@ -1,7 +1,9 @@
 <?php
+session_start();
 
 $email = $password = $errorMsg = "";
 $success = true;
+
 
 if (empty($_POST["email"])) {
     // .= string operator converts values to string
@@ -40,17 +42,19 @@ function authenticateUser() {
     global $fname, $lname, $email, $hashedpw, $errorMsg, $success;
     
      //create database connection
-    $config = parse_ini_file('../../private/db-config.ini');
+    $config = parse_ini_file('../private/db-config.ini');
     $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-    
+    echo "test1";
     //check connection
     if ($conn -> connect_error) {
         $errorMsg = "Connection failed: " . $conn -> connect_error;
         $success = false;
+        echo "test2";
     }
     else {
+        echo "test3";
         //prepare the statement, protect against sql injection
-        $stmt = $conn->prepare("SELECT * FROM WorldOfPets_Members WHERE email=?");
+        $stmt = $conn->prepare("SELECT * FROM pnp_members WHERE email=?");
         //bind and execute the statement
         $stmt->bind_param("s", $email);
         if (!$stmt -> execute()) {
@@ -61,11 +65,17 @@ function authenticateUser() {
         $result = $stmt->get_result();
         //if the result is more than 0
         if($result->num_rows>0) {
+            echo "test4";
             //email field shld be unique so it should only have 1 result
             $row = $result->fetch_assoc();
-            $fname = $row["fname"];
-            $lname = $row["lname"];
+            var_dump($row);
+            $fname = $row["firstName"];
+            $lname = $row["lastName"];
             $hashedpw = $row["password"];
+            
+            $_SESSION['mid'] = $row["memberID"];
+            $_SESSION['username'] = $fname;
+
             
             //check if the pw matches
             if (!password_verify($_POST["pwd"], $hashedpw)) {
@@ -86,6 +96,7 @@ function authenticateUser() {
 
 if($success) {
     authenticateUser();
+    header('Location: /index.php');
 }
 
 ?>
@@ -125,6 +136,7 @@ if($success) {
             if($success) {
                 echo "<h4>Login successful!</h4>";
                 echo "<h5>Welcome back, " . $fname . " " . $lname . "</h5>";
+                echo($fname);
         ?>
         <div class="form-group">
             <a href="index.php">
