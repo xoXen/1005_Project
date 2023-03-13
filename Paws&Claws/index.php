@@ -46,12 +46,12 @@ if (isset ($_SESSION['username'])) {
         <script defer src="JS/login.js"></script>
     </head>
     <body>
-        <?php include "nav.inc.php" ?>
+        <?php include "PHP/nav.inc.php" ?>
         <!-- expand-[size] -->
         <!--jumbotron is a big box used to call for extra attention-->
         <header class="jumbotron text-center">
             <?php if (isset ($_SESSION['username'])) { ?>
-                <h1 class="display-4">Hello <?php $username ?>! :)</h1>
+                <h1 class="display-4">Hello <?php echo $username ?>! :)</h1>
                 <h2>This is the Paws and Claws home page hehehehe</h2>
             <?php } else { ?>
                 <h1 class="display-4">Welcome to World of Pets!</h1>
@@ -59,8 +59,7 @@ if (isset ($_SESSION['username'])) {
             <?php } ?>
         </header>
         <main class="container">
-            <?php include "login.inc.php" ?>
-            <?php include "reg.inc.php" ?>
+            <?php include "PHP/accBtns.inc.php" ?>
             <section id="dogs">
                 <h2>All About Dogs!</h2>
                 <div class="row">
@@ -116,6 +115,6 @@ if (isset ($_SESSION['username'])) {
                 </div>
             </section>
         </main>
-        <?php include "footer.inc.php" ?>
+        <?php include "PHP/footer.inc.php" ?>
     </body>
 </html>

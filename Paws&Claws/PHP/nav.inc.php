@@ -28,9 +28,15 @@
             </li>
         </ul>
         <div class="dropdown" style="padding-right: 100px;">
-            <button class="btn btn-secondary" onClick="openBtn()" type="button">
-                Login
-            </button>
+            <?php if (isset($_SESSION['username'])) { ?>
+                <button class="btn btn-secondary" onClick="logoutBtn()" id="logoutBtn" type="button">
+                    Logout
+                </button>
+            <?php } else { ?>
+                <button class="btn btn-secondary" onClick="openBtn()" type="button">
+                    Login
+                </button>
+            <?php } ?>
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dummy Sign in
             </button>

@@ -82,6 +82,10 @@ function authenticateUser() {
                 $errorMsg = "Email not found or password does not match";
                 $success = false;
             }
+            
+            if ($success) {
+                header('Location: /index.php');
+            }
         }
         else {
             $errorMsg = "Email not found or password does not match";
@@ -96,7 +100,6 @@ function authenticateUser() {
 
 if($success) {
     authenticateUser();
-    header('Location: /index.php');
 }
 
 ?>
@@ -136,7 +139,6 @@ if($success) {
             if($success) {
                 echo "<h4>Login successful!</h4>";
                 echo "<h5>Welcome back, " . $fname . " " . $lname . "</h5>";
-                echo($fname);
         ?>
         <div class="form-group">
             <a href="index.php">
@@ -151,7 +153,7 @@ if($success) {
                 echo "<p>" . $errorMsg . "</p>";
         ?>
         <div class="form-group">
-            <a href="login.php">
+            <a href="index.php">
                 <button class="btn btn-warning" type="button">Return to Login</button>
             </a>
         </div>
