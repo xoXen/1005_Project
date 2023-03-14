@@ -161,6 +161,6 @@ if($success) {
             }
         ?>
         </section>
-        <?php include "footer.inc.php"; ?>
+        <?php include "PHP/footer.inc.php"?>
     </body>
 </html>

@@ -1,0 +1,57 @@
+
+div .main-container {
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+
+}
+
+aside {
+  width: 20%;
+  float: left;
+  height: 100%;
+
+}
+
+#side_nav{
+    background: #fff;
+    /*padding: 20px;*/
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.content{
+    position: absolute;
+    top: 0;
+    left: 220px;
+    right: 0;
+    padding: 80px;    
+}
+
+hr.h-color{
+    background: #000;
+}
+
+.sidebar li.active{
+    background: #9CAF88;
+    border-radius: 8px;
+}
+
+.sidebar li.active a, .sidebar li.active a:hover{
+    color: #fff;
+}
+
+.sidebar li a{
+    color: #000;
+}
+
+
+#dropdownUser2{
+    left: 10px;
+}
+
+#dropdownStatus{
+    border-color: lightgrey;
+    padding: 10px;
+}
+
+

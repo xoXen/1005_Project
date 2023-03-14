@@ -32,11 +32,11 @@ figure figcaption {
 }
 
 /* footer has a top border with content centered and italicized */
-footer {
+/*footer {
     border-top: 3px solid grey;
     text-align: center;
     padding: 20px;
-}
+}*/
 
 /* style img popup window */
 .img-popup {

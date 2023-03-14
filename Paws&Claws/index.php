@@ -27,6 +27,8 @@ if (isset ($_SESSION['username'])) {
         crossorigin="anonymous">
         <link rel="stylesheet" href="CSS/main.css">
         <link rel="stylesheet" href="CSS/login.css">
+        <link rel="stylesheet" href="CSS/footer.css">
+
         <!--jQuery-->
         <!-- defer tells the browser to wait until complete webpage has been 
            loaded and parsed before loading javascript -->
