@@ -33,7 +33,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
         <?php
-        include "nav.inc.php";
+        include "PHP/nav.inc.php";
         ?>
         <main class="container">
             <h1>Contact Us</h1>
@@ -41,7 +41,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 You may also call the clinic at 6123 4567 or drop us an <a href = mailto: pawsnclaws@gmail.com">email</a>
 
             </p>
-            <form action="process_register.php" method="post">
+            <form action="process_contact.php" method="post">
 
             <div class="form-group">
             <label for="name">Name:</label>
@@ -71,6 +71,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </form>
 </main>
 <?php
-include "footer.inc.php";
+include "PHP/footer.inc.php";
 ?>
 </body>
