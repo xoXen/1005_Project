@@ -36,7 +36,7 @@ else if($namelengthcheck > 45){
     $success = false;
 }
 else{
-    $fname = sanitize_input($_POST["name"]);
+    $name = sanitize_input($_POST["name"]);
 }
 
 
@@ -46,17 +46,17 @@ if ($msgcheck) {
     $errorMsg .= "Message cannot be empty. <br>";
     $success = false;
 }
-else if($messagelengthcheck > 45){
+else if($messagelengthcheck > 2000){
     $errorMsg .= "Message can only be a maximum of 2000 characters. <br>";
     $success = false;
 }
 else{
-    $fname = sanitize_input($_POST["message"]);
+    $msg = sanitize_input($_POST["msg"]);
 }
 
 
 if($success){
-    saveMemberToDB($message);
+    saveMemberToDB($msg);
 //    echo $_POST['pwd'];
 }
 
@@ -75,34 +75,46 @@ function sanitize_input($data)
 /*
 * Helper function to write the member data to the DB
 */
-function saveMemberToDB($message)
-{
-    global $name, $email, $message, $errorMsg, $success;
-    // Create database connection.
-    $config = parse_ini_file('../../private/db-config.ini');
-    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-    // Check connection
-    if ($conn->connect_error)
-    {
 
-        $errorMsg = "Connection failed: " . $conn->connect_error;
+
+function saveMemberToDB() { 
+    global $name, $email, $msg, $errorMsg, $success;
+// Create database connection.        
+    $config = parse_ini_file('/var/www/private/db-config.ini');
+    $servername = $config['servername'];
+    $username = $config['username'];
+    $password = $config['password'];
+    $dbname = $config['dbname'];
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    
+        
+    
+// Check connection   
+    if ($conn->connect_error) {
+        $errorMsg = "Connection failed: " . $conn->connect_error;        
         $success = false;
-    }
-    else
-    {
-        // Prepare the statement:
+    } 
+    else {
+
+// Prepare the statement:
         $stmt = $conn->prepare("INSERT INTO pnc_contact (name, email, message) VALUES (?, ?, ?)");
-        // Bind & execute the query statement:
-        $stmt->bind_param("ssss", $name, $email, $message);
-        if (!$stmt->execute())
-        {
-            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+// Bind & execute the query statement:        
+        $stmt->bind_param("sss", $name, $email, $msg);   
+
+        # Excecute your query        
+        if (!$stmt->execute()) {
+            $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;            
             $success = false;
-        }
+        }        
         $stmt->close();
     }
     $conn->close();
-}
+    
+ }
+
+
 
 ?>
 
@@ -136,7 +148,7 @@ function saveMemberToDB($message)
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <?php include "nav.inc.php";?>
+        <?php include "PHP/nav.inc.php";?>
         <?php
         if ($success) {
             echo " <br><br><main class='container'>";
