@@ -32,12 +32,7 @@ if (isset ($_SESSION['username'])) {
         <!--jQuery-->
         <!-- defer tells the browser to wait until complete webpage has been 
            loaded and parsed before loading javascript -->
-        <script defer
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous">
-        </script>
-        <!--Bootstrap JS-->
+        <script defer src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    <!--Bootstrap JS-->
         <script defer
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
             integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
