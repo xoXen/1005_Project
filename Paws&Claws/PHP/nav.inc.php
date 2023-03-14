@@ -10,16 +10,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">Home</a>
             </li>
-            <div class="dropdown">
-                <button class="dropbtn" id="servicesmenu" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-                    <i class="fa-fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a class=""nav-link" href="#">Routine Check Ups</a>
-                    <a class=""nav-link" href="#">Routine Check Ups</a>
-                    <a class=""nav-link" href="#">Routine Check Ups</a>
-                </div> 
-            </div>    
+            <li class ="nav-item">
+                <a class="nav-link" href="contact.php">Contact</a>
+            </li>  
             <li class="nav-item">
                 <a class="nav-link" href="index.php#dogs">Dogs</a>
             </li>
